@@ -1,0 +1,21 @@
+{
+    "name": "rickiezera/icons",
+    "description": "Pacote de Blade Icons pronto para uso",
+    "type": "library",
+    "require": {
+        "php": "^8.0",
+        "blade-ui-kit/blade-icons": "^1.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "RickieZera\\Icons\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RickieZera\\Icons\\IconsServiceProvider"
+            ]
+        }
+    }
+}
