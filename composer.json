@@ -3,6 +3,7 @@
     "description": "Pacote de Blade Icons pronto para uso",
     "version": "1.0.0",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": "^8.0",
         "blade-ui-kit/blade-icons": "^1.15"
