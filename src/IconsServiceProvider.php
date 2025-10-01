@@ -15,7 +15,10 @@ class IconsServiceProvider extends ServiceProvider
     public function boot(Factory $factory)
     {
         // Registra os ícones diretamente do pacote
-        $factory->add('icons', __DIR__ . '/../resources/svg');
+        $factory->add('icons', [
+            'path' => __DIR__ . '/../resources/svg',
+            'prefix' => 'icon',
+        ]);
 
         // Permite publicar os SVGs no projeto consumidor, se quiser sobrescrever
         $this->publishes([
