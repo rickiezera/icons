@@ -1,6 +1,7 @@
 {
     "name": "rickiezera/icons",
     "description": "Pacote de Blade Icons pronto para uso",
+    "version": "1.0.0",
     "type": "library",
     "require": {
         "php": "^8.0",
