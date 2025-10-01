@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "blade-ui-kit/blade-icons": "^1.15"
+        "blade-ui-kit/blade-icons": "^1.8"
     },
     "autoload": {
         "psr-4": {
