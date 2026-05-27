@@ -1,93 +1,62 @@
-# Icons 🎨
+# Icons
 
-<a href="https://github.com/rickiezera/icons/actions?query=workflow%3ATests">
-    <img src="https://github.com/rickiezera/icons/actions/workflows/tests.yml/badge.svg?branch=main" alt="Tests">
-</a>
-<a href="https://packagist.org/packages/rickiezera/icons">
-    <img src="https://img.shields.io/packagist/v/rickiezera/icons" alt="Latest Stable Version">
-</a>
-<a href="https://packagist.org/packages/rickiezera/icons">
-    <img src="https://img.shields.io/packagist/dt/rickiezera/icons" alt="Total Downloads">
-</a>
+Pacote de icones SVG para Laravel usando [Blade Icons](https://github.com/blade-ui-kit/blade-icons).
 
-A simple package to easily use **custom Blade Icons** in your Laravel views.  
-All icons are preconfigured and ready to use.
+O pacote registra os SVGs de `resources/svg` como componentes Blade com o prefixo `icon`. Atualmente o repositório inclui mais de 5.000 icones.
 
-For a full list of available icons, check the [SVG directory](resources/svg).
+## Requisitos
 
----
+- PHP 8.0 ou superior
+- `blade-ui-kit/blade-icons` 1.8 ou superior
+- Laravel com package discovery habilitado
 
-## Requirements
-
-- PHP 8.0 or higher  
-- Laravel 8.0 or higher  
-
----
-
-## Installation
+## Instalacao
 
 ```bash
 composer require rickiezera/icons
 ```
 
-## Blade Icons
+O service provider `RickieZera\Icons\IconsServiceProvider` e registrado automaticamente pelo Laravel via Composer.
 
-Blade LucideIcons uses Blade Icons under the hood. Please refer to [the Blade Icons readme](https://github.com/blade-ui-kit/blade-icons) for additional functionality. We also recommend to [enable icon caching](https://github.com/blade-ui-kit/blade-icons#caching) with this library.
+## Uso
 
-## Configuration
+Use o nome do arquivo SVG sem a extensao, precedido por `x-icon-`.
 
-If you want to customize the SVGs, publish them to your project:
+```blade
+<x-icon-user />
+<x-icon-horse />
+<x-icon-album class="w-6 h-6 text-gray-500" />
+<x-icon-anchor style="color: #555" />
+```
+
+Por exemplo, o arquivo `resources/svg/horse.svg` fica disponivel como:
+
+```blade
+<x-icon-horse />
+```
+
+## Publicando os SVGs
+
+Se quiser copiar os SVGs para o projeto consumidor para consulta ou customizacao:
 
 ```bash
 php artisan vendor:publish --tag=icons
 ```
 
-They will be available in:
+Os arquivos serao publicados em:
 
-```bash
+```text
 resources/vendor/icons/svg
 ```
 
-## Usage
+## Blade Icons
 
-Icons can be used as self-closing Blade components which will be compiled to SVG icons:
+Este pacote usa Blade Icons por baixo. Recursos como atributos, classes, diretivas e cache seguem o comportamento da biblioteca base.
 
-```blade
-<x-icons-user />
-```
+Para mais detalhes, consulte a documentacao do Blade Icons:
 
-You can also pass classes to your icon components:
+https://github.com/blade-ui-kit/blade-icons
 
-```blade
-<x-icons-album class="w-6 h-6 text-gray-500"/>
-```
+## Licenca
 
-And even use inline styles:
-
-```blade
-<x-icons-anchor style="color: #555"/>
-```
-
-The solid icons can be referenced like this:
-
-```blade
-<x-icons-user />
-```
-
-### Raw SVG Icons
-
-If you want to use the raw SVG icons as assets, you can publish them using:
-
-```bash
-php artisan vendor:publish --tag=blade-lucide-icons --force
-```
-
-Then use them in your views like:
-
-```blade
-<img src="{{ asset('vendor/blade-lucide-icons/cloud-moon.svg') }}" width="10" height="10"/>
-```
-
-## Changelog
-
-Check out the [CHANGELOG](CHANGELOG.md) in this repository for all the recent changes.
+MIT
